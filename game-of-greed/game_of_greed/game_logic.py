@@ -7,7 +7,10 @@ class GameLogic:
 
     '''
     
-    doc string 
+    GameLogic class that has two methods:
+
+    roll_dice: which takes in an integer as argument and returns a tuple of random numbers from 1 to 6
+    calculate_score: which takes in a tuple of integers as an argument and returns the total_score.
 
     '''
     @staticmethod
@@ -55,33 +58,14 @@ class GameLogic:
 
                 if i == 1 and ctr[i] >= 3:
                     total_score+= (ctr[i]-2) * 1000                     
-                       
-
-                
-
 
         print (f'Totalscore: {total_score}')    
-       
-
-
-           
-
-                
- 
-
-        
-        
 
 
 
-        
- 
-
-            
+        return total_score   
 
 
-
-        return total_score          
 if __name__ == '__main__':
     values = GameLogic()
     rolls = values.roll_dice(6)

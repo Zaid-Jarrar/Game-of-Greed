@@ -44,7 +44,7 @@ class GameLogic:
                     total_score+= (i*100) * (ctr[i] - 2)
                    
                 if ctr[i] == 2 and ctr[len(ctr)] == 2 and i != 1 and i != 5:
-                    total_score+= 1500
+                    total_score= 1500
                     return total_score
 
                 if i == 5 and ctr[i] < 3:

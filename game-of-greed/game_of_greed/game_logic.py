@@ -73,29 +73,7 @@ if __name__ == '__main__':
     
 
    
-        # total_score = 0
-        # ctr = Counter(rolls)
-        # print(ctr)
-        # print(ctr.keys())
-        # print(ctr.values())
-        # # common = ctr[0][1]
-        # while ctr.keys():
-        #     if ctr.keys() == 1 and ctr.values() <= 2:
-        #         total_score += 100
-        #     else:
-        #         total_score += 1000*ctr.values()
-            
-        #     elif ctr.keys() == 5:
-        #         total_score += 50
-        #         return total_score
-                    
-
-
-
-        # elif ctr[0][1] == 2:
-
-
-        # print(total_score)
+        
 
 
 

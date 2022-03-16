@@ -59,7 +59,7 @@ class GameLogic:
                 if i == 1 and ctr[i] >= 3:
                     total_score+= (ctr[i]-2) * 1000                     
 
-        print (f'Totalscore: {total_score}')    
+        # print (f'Totalscore: {total_score}')    
 
 
 

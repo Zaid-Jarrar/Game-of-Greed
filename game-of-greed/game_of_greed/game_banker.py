@@ -20,13 +20,13 @@ class Banker:
     def shelf(self,score):
         # shelved as a counter for the score
         self.shelved += score
-        return 
+        return self.shelved
 
     def bank(self):
         # balance in bank is commulated from shelf
         self.balance+=self.shelved
         self.shelved=0
-        return 
+        return self.shelved, self.balance
 
         # when zelsh mush be return to zero
     def clear_shelf(self):

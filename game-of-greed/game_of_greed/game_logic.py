@@ -23,11 +23,11 @@ class GameLogic:
     def calculate_score(rolls):
 
         ctr = Counter(rolls)
-        print(f'occurances of Five : {ctr[5]}')
-        print(f'occurances of One : {ctr[1]}')
-        print(ctr)
+        # print(f'occurances of Five : {ctr[5]}')
+        # print(f'occurances of One : {ctr[1]}')
+        # print(ctr)
         total_score = 0
-        print(ctr.keys())
+        # print(ctr.keys())
 
         for i in ctr:
 
@@ -39,10 +39,10 @@ class GameLogic:
 
                 if ctr[i] == 3 and i != 1 and i != 5:
                     total_score+= i * 100
-                    return total_score
+                    
                 if ctr[i] > 3 and i != 1 and i != 5:
                     total_score+= (i*100) * (ctr[i] - 2)
-                    return total_score
+                   
                 if ctr[i] == 2 and ctr[len(ctr)] == 2 and i != 1 and i != 5:
                     total_score+= 1500
                     return total_score

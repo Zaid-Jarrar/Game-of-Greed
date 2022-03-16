@@ -1,6 +1,5 @@
 # from game_of_greed.game_logic import ameLogic
 class Banker:
-
     '''
 
     Banker class that has 4 methods:
@@ -32,3 +31,4 @@ class Banker:
         # when zelsh mush be return to zero
     def clear_shelf(self):
         self.shelved=0
+

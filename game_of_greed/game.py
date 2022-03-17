@@ -3,10 +3,16 @@ from game_of_greed.game_logic import GameLogic
 
 
 class Game:
+
+
     def __init__(self, roller=None):
         self.roller = roller
         self.banker = Banker()
+        self.logic = GameLogic()
         self.banker.bank
+
+
+
     def play(self):
         print("Welcome to Game of Greed")
         wanna_play = input("Wanna play? ")
@@ -15,14 +21,16 @@ class Game:
         else:
             banked = self.banker
             round = 1
-            
+            result = 0
+            choice = 0
             while round:
                 score = 0
                 shelved = banked.shelf(score)
                 # print(shelved)
                 # shelf = 0
 
-                print(f"Starting round {round}")
+                if choice != 'r':
+                    print(f"Starting round {round}")
                 print("Rolling 6 dice...")
 
                 rolled_dice = self.roller(6)
@@ -33,13 +41,19 @@ class Game:
 
                
                 decision = input("Enter dice to keep (no spaces), or (q)uit: ")
-                result = banked.bank()[1]
-                if decision == 'q':
-                   
+
+
+                #BANKING HERE -----------
+                result = banked.balance
+                # Thanks for playing depends on this to calculate the result 70 passes
+
+                if banked.balance == 0 and decision == 'q':
                     print(f"Thanks for playing. You earned 0 points")
-                    # print('this is decision')
-                    
-                    break
+                    break     
+                if banked.balance != 0 and decision == 'q':
+                        print(f'Total score is {result} points')
+                        print(f'Thanks for playing. You earned {result} points') 
+                        break   
                 else:
                     new_list = []
                     selected_dice = tuple(decision)
@@ -64,21 +78,24 @@ class Game:
                     choice = input("(r)oll again, (b)ank your points or (q)uit ")
 
                     # choice = input("(r)oll again, (b)ank your points or (q)uit: ")
-                    if choice == 'q':
-                        print('hi')
+
                     if choice == "b":
                         if round == 1:
                             print(f"You banked {shelved} points in round {round}")
-                            print(f"Total score is {shelved} points")
+                            print(f"Total score is {banked.bank()[1]} points")
                             round += 1
                         else:
                             print(f"You banked {shelved} points in round {round}")
-                            print(f"Total score is {result} points")
+                            print(f"Total score is {banked.bank()[1]} points")
+                            # banked calculate the total score 
                             round += 1
+
+                    elif choice == 'r':
+                        continue
                 
             # print(f"Total score is {result} points")
 
-            print(f"Thanks for playing. You earned {result} points")
+            # print(f"Thanks for playing. You earned {result} points")
                 
                 # print(f"Thanks for playing. You earned {result} points")
                 

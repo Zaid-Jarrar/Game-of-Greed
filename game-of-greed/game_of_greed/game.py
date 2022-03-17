@@ -40,7 +40,8 @@ class Game:
                
                 decision = input("Enter dice to keep (no spaces), or (q)uit: ")
 
-                result += banked.balance
+                result = banked.balance
+                # Thanks for playing depends on this to calculate the result 70 passes
 
                 if banked.balance == 0 and decision == 'q':
                     print(f"Thanks for playing. You earned 0 points")

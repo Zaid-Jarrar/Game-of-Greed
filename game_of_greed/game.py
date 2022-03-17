@@ -22,13 +22,15 @@ class Game:
             banked = self.banker
             round = 1
             result = 0
+            choice = 0
             while round:
                 score = 0
                 shelved = banked.shelf(score)
                 # print(shelved)
                 # shelf = 0
 
-                print(f"Starting round {round}")
+                if choice != 'r':
+                    print(f"Starting round {round}")
                 print("Rolling 6 dice...")
 
                 rolled_dice = self.roller(6)
@@ -40,6 +42,8 @@ class Game:
                
                 decision = input("Enter dice to keep (no spaces), or (q)uit: ")
 
+
+                #BANKING HERE -----------
                 result = banked.balance
                 # Thanks for playing depends on this to calculate the result 70 passes
 
@@ -84,8 +88,10 @@ class Game:
                             print(f"You banked {shelved} points in round {round}")
                             print(f"Total score is {banked.bank()[1]} points")
                             # banked calculate the total score 
-                            
                             round += 1
+
+                    elif choice == 'r':
+                        continue
                 
             # print(f"Total score is {result} points")
 

@@ -1,7 +1,7 @@
 import pytest
 from game_of_greed.game_logic import GameLogic
 
-pytestmark = [pytest.mark.version_1]
+# pytestmark = [pytest.mark.version_1]
 
 
 def test_single_five():
@@ -92,6 +92,12 @@ def test_six_ones():
     actual = GameLogic.calculate_score((1, 1, 1, 1, 1, 1))
     expected = 4000
     assert actual == expected
+
+
+# def test_whatever():
+#     actual = GameLogic.calculate_score((4,4,4,4,5,1))
+#     expected = 950
+#     assert actual == expected
 
 
 @pytest.mark.parametrize(

@@ -149,3 +149,15 @@ def test_six_ones():
 def test_all(test_input, expected):
     actual = GameLogic.calculate_score(test_input)
     assert actual == expected
+
+
+
+def test_zilch6():
+    actual=GameLogic.calculate_score((2,2,3,4,6,3))
+    expected=0
+    assert actual==expected
+
+def test_zilch2():
+    actual=GameLogic.calculate_score((6,3))
+    expected=0
+    assert actual==expected

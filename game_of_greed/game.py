@@ -51,29 +51,30 @@ class Game:
                 possible_score = logic.calculate_score(rolled_dice)# rolled_dice
                 
                 #Zilch
-                # if possible_score == 0:
-                #     print('Zilch!!! Round over')
-                #     print(f'You banked 0 points in round {round}')
-                #     print(f'Total score is {banked.balance} points')
-                #     round += 1
-                #     # print(nums)
-                    
-                #     # print(f"Starting round {round}")    
-                #     rem_dice = 6
                 if possible_score == 0:
                     print('Zilch!!! Round over')
                     print(f'You banked 0 points in round {round}')
                     print(f'Total score is {banked.balance} points')
                     round += 1
-                    print(f"Starting round {round}")
+                    # print(nums)
+                    
+                    # print(f"Starting round {round}")    
+                    rem_dice = 6
+                    break
+                # if possible_score == 0:
+                #     print('Zilch!!! Round over')
+                #     print(f'You banked 0 points in round {round}')
+                #     print(f'Total score is {banked.balance} points')
+                #     round += 1
+                #     print(f"Starting round {round}")
 
-                    print(f"Rolling {rem_dice} dice...")# dynamic dice counter step 1
-                    rolled_dice = self.roller(rem_dice)# dynamic dice counter step 2
-                    # rolled_dice = (2,6,4,3,3,6)
-                    nums = []
-                    for i in rolled_dice:
-                        nums.append(str(i))
-                    print(",".join(nums))              
+                #     print(f"Rolling {rem_dice} dice...")# dynamic dice counter step 1
+                #     rolled_dice = self.roller(rem_dice)# dynamic dice counter step 2
+                #     # rolled_dice = (2,6,4,3,3,6)
+                #     nums = []
+                #     for i in rolled_dice:
+                #         nums.append(str(i))
+                #     print(",".join(nums))              
                     
                     
                 #I DONT KNOW HOW IT WORKED 

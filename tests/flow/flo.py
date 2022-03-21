@@ -37,8 +37,10 @@ class Flo:
                     roll = [int(item) for item in line.split(",")]
 
                     self.old_print("roll" + str(roll))
-
+                    self.old_print(self.rolls)    
                     self.rolls.append(roll)
+                    self.old_print(f'{self.rolls}<-------------------------')    
+
 
     @staticmethod
     def test(path):

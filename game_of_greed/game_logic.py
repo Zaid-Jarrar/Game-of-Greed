@@ -57,7 +57,9 @@ class GameLogic:
                     total_score+= ctr[i] * 100
 
                 if i == 1 and ctr[i] >= 3:
-                    total_score+= (ctr[i]-2) * 1000                     
+                    total_score+= (ctr[i]-2) * 1000 
+                if 5 not in ctr and 1 not in ctr and ctr[i] < 3:
+                    total_score = 0
 
         # print (f'Totalscore: {total_score}')    
 

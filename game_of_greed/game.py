@@ -27,9 +27,11 @@ class Game:
             rem_dice = 6
             while round:
 
+
                 
         
                 if choice != 'r':
+
                     
                     print(f"Starting round {round}")
 

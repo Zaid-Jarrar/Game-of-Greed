@@ -28,9 +28,9 @@ class Game:
             while round:
 
 
-
+                
+        
                 if choice != 'r':
-
 
                     
                     print(f"Starting round {round}")

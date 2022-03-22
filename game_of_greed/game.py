@@ -30,8 +30,10 @@ class Game:
                 # shelved = banked.shelf(score)
                 # print(shelved)
                 # shelf = 0
-                
-                if choice != 'r' :
+
+
+                if choice != 'r':
+
                     
                     print(f"Starting round {round}")
 
@@ -47,6 +49,7 @@ class Game:
                     nums.append(str(i))
                 print(",".join(nums))
                
+
 
                
                 
@@ -120,15 +123,18 @@ class Game:
                     new_list = []
                     selected_dice = tuple(decision)
                     for elem in selected_dice:
+
                        
                         
                         new_list.append(int(elem))
                        
 
+
                     
                         
                     # print(new_list)
                     new_tuple = tuple(new_list)
+
                     
                 score = GameLogic.calculate_score(new_tuple)
                 shelved = banked.shelf(score)
@@ -162,6 +168,7 @@ class Game:
                     if rem_dice == 0:
                         rem_dice = 6
                     continue
+
                 
 
                 

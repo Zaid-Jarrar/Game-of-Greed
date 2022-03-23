@@ -5,7 +5,7 @@ from game_of_greed.game_logic import GameLogic
 class Game:
 
 
-    def __init__(self, roller=None):
+    def __init__(self, roller=GameLogic.roll_dice):
         self.roller = roller
         self.banker = Banker()
         self.logic = GameLogic()
@@ -15,6 +15,7 @@ class Game:
 
     def play(self):
         print("Welcome to Game of Greed")
+        print("(y)es to play or (n)o to decline")
         wanna_play = input("Wanna play? ")
         if wanna_play == "n":
             print("OK. Maybe another time")
@@ -26,7 +27,8 @@ class Game:
             choice = 0
             rem_dice = 6
             while round:
-                
+                if round==20 or banked.balance>=10000:
+                    break
                 if choice != 'r' :
                     
                     print(f"Starting round {round}")
@@ -39,11 +41,9 @@ class Game:
                 nums = []
                 for i in rolled_dice:
                     nums.append(str(i))
-                print(",".join(nums))
-               
+                print("*** "+",".join(nums))
+        
 
-               
-                
                 possible_score = logic.calculate_score(rolled_dice)# rolled_dice
                 
                 #Zilch
@@ -57,9 +57,9 @@ class Game:
                     rem_dice = 6
                     continue
 
+                print("Enter dice to keep, or (q)uit:")
                 
-                
-                decision = input("Enter dice to keep (no spaces), or (q)uit: ")
+                decision = input("Enter dice to keep, or (q)uit:")
                 
 
                 #BANK HERE -----------
@@ -81,7 +81,7 @@ class Game:
                 new_list = []
                 selected_dice = tuple(decision)
                 for elem in selected_dice:
-                        new_list.append(int(elem))
+                    new_list.append(int(elem))
                    
 
                 
@@ -96,11 +96,12 @@ class Game:
                     nums = []
                     for i in rolled_dice:
                         nums.append(str(i))
-                    print(",".join(nums))
+                    print("*** "+",".join(nums))
                     banked.clear_shelf()
-                    decision = input("Enter dice to keep (no spaces), or (q)uit: ")
+                    print("Enter dice to keep, or (q)uit:")
+                    decision = input("Enter dice to keep, or (q)uit:")
                     new_list = []
-                    selected_dice = tuple(decision)
+                    selected_dice = tuple(str(decision))
                     for elem in selected_dice:
                        
                         
@@ -121,9 +122,11 @@ class Game:
                 print(f"You have {shelved} unbanked points and {rem_dice} dice remaining")
                 if rem_dice == 0:
                     rem_dice = 6
-                choice = input("(r)oll again, (b)ank your points or (q)uit ")
+                print("(r)oll again, (b)ank your points or (q)uit:")
+                choice = input("(r)oll again, (b)ank your points or (q)uit:")
 
-                if choice == "b":                        
+                if choice == "b":    
+                    print(f'Thanks for playing. You earned {shelved} points')                    
                     print(f"You banked {shelved} points in round {round}")
                     print(f"Total score is {banked.bank()[1]} points")
                     round += 1

@@ -15,9 +15,30 @@ class GameLogic:
     @staticmethod
     def roll_dice(number):
         rolls = tuple([random.randint(1, 6) for _ in range(number)]) 
-    #     print(rolls)  
+        #     print(rolls)  
         return  rolls
-      
+    def get_scorers_Super_Bot(rolls):
+        ctr=Counter(rolls)
+        ones_fives=""
+        for i in rolls:
+            if i==1 or i==5:
+                ones_fives+= str(i)
+            if ctr[i]>=3:
+               
+                ones_fives+=str(i)
+        return ones_fives
+    @staticmethod
+    def get_scorers(rolls):
+        ones_fives=""
+        for i in rolls:
+            if i==1 or i==5:
+                ones_fives+= str(i)
+        return ones_fives
+
+        
+
+
+
     @staticmethod
     def validate_input(rolled_dice,chosen_dice):
         ctr_rolled_dice=Counter(rolled_dice)
@@ -86,4 +107,4 @@ if __name__ == '__main__':
     values = GameLogic()
     rolls = values.roll_dice(6)
     values.calculate_score(rolls)
-    
+    values.get_scorers((1,4,2,5,5))

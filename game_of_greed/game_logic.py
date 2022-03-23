@@ -94,8 +94,10 @@ class GameLogic:
 
                 if i == 1 and ctr[i] >= 3:
                     total_score+= (ctr[i]-2) * 1000 
+
             if pairs==3:
                 total_score=1500
+
         # print (f'Totalscore: {total_score}')    
 
 
